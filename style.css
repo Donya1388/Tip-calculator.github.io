@@ -1,0 +1,45 @@
+.container {
+  display: grid;
+  width: 600px;
+  height: 100px;
+  grid-template-columns: auto auto;
+  background: bisque;
+}
+
+.bill-form {
+  display: block;
+}
+
+.cost-form__bill-label,
+.cost-form__tip-counter-label {
+  display: block;
+}
+
+.results__tip {
+  display: block;
+}
+
+.results__total {
+  clear: both;
+}
+
+.align-left {
+  float: left;
+}
+
+.align-right {
+  float: right;
+}
+
+span {
+  cursor: pointer;
+}
+
+.tip-counter--minus,
+.tip-counter--plus {
+  display: inline-block;
+  text-align: center;
+  width: 20px;
+  height: 20px;
+  background: cadetblue;
+}
