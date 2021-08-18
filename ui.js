@@ -1,9 +1,11 @@
 
 class UI {
 
-    constructor() {
-
+    constructor(min, max) {
+        this.min = min;
+        this.max = max;
     }
+
 
     displayAmounts(amount, classname) {
         const p = document.createElement('p');
@@ -17,6 +19,26 @@ class UI {
     clearResult(classname) {
         if (document.querySelector(`.${classname}`).children[1]) {
             document.querySelector(`.${classname}`).children[1].remove();
+        }
+    }
+
+    setMinus() {
+        if (tipInput.value > min) {
+            tipInput.value -= 1;
+            var value = document.querySelector('.tip-counter__input').setAttribute('value', tipInput.value);
+        } else {
+            // showAlert
+            console.log('Please insert a number between 15 to 100.');
+        }
+    }
+
+    setPlus() {
+        if (tipInput.value < max) {
+            tipInput.value += 1;
+            var value = document.querySelector('.tip-counter__input').setAttribute('value', tipInput.value);
+        } else {
+            // showAlert
+            console.log('Please insert a number between 15 to 100.');
         }
     }
 
@@ -41,22 +63,3 @@ class UI {
     // }
 
 }
-
-
-
-
-// <!-- Tip input -->
-//             <label for="Tip" class="cost-form__tip-counter-label">Tip:</label>
-//             <span class="tip-counter--minus" onclick="ui.setMinus();">-</span>
-//             <input type="text" class="tip-counter__input" />
-//             <!-- <input class="tip-counter__input" onfocus="ui.clearTipDefaultInput();" onblur="ui.setTipDefaultInput()" type="text" value="15"/> -->
-//             <!-- <span class="tip-counter__value">15%</span> -->
-//             <span class="tip-counter--plus" onclick="ui.setPlus();">+</span>
-//         <div class="results">
-//             <div class="results__tip">
-//                 <p class="results__tip-label align-left">Tip</p>
-//             </div>
-//             <div class="results__total">
-//                 <p class="results__total-label align-left">Total</p>
-//             </div>
-//         </div>
