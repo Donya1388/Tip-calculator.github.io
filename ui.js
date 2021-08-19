@@ -4,6 +4,9 @@ class UI {
     constructor(min, max) {
         this.min = min;
         this.max = max;
+        this.minus = document.querySelector('.tip-counter--minus');
+        this.plus = document.querySelector('.tip-counter--plus');
+        this.tipCounterON = false;
     }
 
 
@@ -23,22 +26,32 @@ class UI {
     }
 
     setMinus() {
-        if (tipInput.value > min) {
-            tipInput.value -= 1;
-            var value = document.querySelector('.tip-counter__input').setAttribute('value', tipInput.value);
-        } else {
-            // showAlert
-            console.log('Please insert a number between 15 to 100.');
+
+        if (billInput.value != '') {
+            if (tipInput.value > min) {
+                this.tipCounterON = true;
+                tipInput.value -= 1;
+                document.querySelector('.tip-counter__input').setAttribute('value', tipInput.value);
+                getBill();
+            } else {
+                // showAlert
+                console.log('Please insert a number between 15 to 100.');
+            }
         }
     }
 
     setPlus() {
-        if (tipInput.value < max) {
-            tipInput.value += 1;
-            var value = document.querySelector('.tip-counter__input').setAttribute('value', tipInput.value);
-        } else {
-            // showAlert
-            console.log('Please insert a number between 15 to 100.');
+
+        if (billInput.value != '') {
+            if (tipInput.value < max) {
+                this.tipCounterON = true;
+                tipInput.value += 1;
+                document.querySelector('.tip-counter__input').setAttribute('value', tipInput.value);
+                getBill();
+            } else {
+                // showAlert
+                console.log('Please insert a number between 15 to 100.');
+            }
         }
     }
 
